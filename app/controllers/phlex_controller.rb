@@ -10,4 +10,8 @@ class PhlexController < ApplicationController
   def tooltip
     render(Phlex::Tooltip.new)
   end
+
+  def theme_toggle
+    render(Phlex::ThemeToggle.new)
+  end
 end

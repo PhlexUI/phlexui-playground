@@ -32,5 +32,6 @@ module PhlexuiPlayground
     Rails.autoloaders.main.collapse("#{Rails.root}/app/views/components/rbui/combobox")
     Rails.autoloaders.main.collapse("#{Rails.root}/app/views/components/rbui/tooltip")
     Rails.autoloaders.main.collapse("#{Rails.root}/app/views/components/rbui/button")
+    Rails.autoloaders.main.collapse("#{Rails.root}/app/views/components/rbui/theme_toggle")
   end
 end

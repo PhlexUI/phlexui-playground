@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resource :phlex, only: [] do
     resource :combobox, only: [ :show ], to: "phlex#combobox"
     resource :tooltip, only: [ :show ], to: "phlex#tooltip"
+    resource :theme_toggle, only: [ :show ], to: "phlex#theme_toggle"
   end
 
   # Defines the root path route ("/")

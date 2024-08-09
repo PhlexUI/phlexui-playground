@@ -7,9 +7,12 @@ import RbuiComboboxController from "app/views/components/rbui/combobox/combobox_
 import RbuiComboboxContentController from "app/views/components/rbui/combobox/combobox_content_controller";
 import RbuiComboboxItemController from "app/views/components/rbui/combobox/combobox_item_controller";
 import RbuiTooltipController from "app/views/components/rbui/tooltip/tooltip_controller";
+import RbuiThemeToggleController from "app/views/components/rbui/theme_toggle/theme_toggle_controller";
 
 
 application.register("rbui--combobox", RbuiComboboxController);
 application.register("rbui--combobox-content", RbuiComboboxContentController);
 application.register("rbui--combobox-item", RbuiComboboxItemController);
 application.register("rbui--tooltip", RbuiTooltipController);
+
+application.register("rbui--theme-toggle", RbuiThemeToggleController);
