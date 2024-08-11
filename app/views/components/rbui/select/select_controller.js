@@ -4,6 +4,7 @@ import { computePosition, autoUpdate, offset } from "@floating-ui/dom";
 export default class extends Controller {
   static targets = ["trigger", "content", "input", "value", "item"];
   static values = { open: Boolean }
+  static outlets = ["rbui--select-item"]
 
   constructor(...args) {
     super(...args);
@@ -21,6 +22,8 @@ export default class extends Controller {
 
   selectItem(event) {
     event.preventDefault();
+
+    this.rbuiSelectItemOutlets.forEach(item => item.handleSelectItem(event))
 
     this.inputTarget.value = event.target.dataset.value;
     this.valueTarget.innerText = event.target.innerText;
@@ -43,11 +46,7 @@ export default class extends Controller {
 
     if (currentIndex + 1 < this.itemTargets.length) {
       this.itemTargets[currentIndex].removeAttribute("aria-current");
-
-      const currentItem = this.itemTargets[currentIndex + 1];
-      currentItem.focus();
-      currentItem.setAttribute("aria-current", "true");
-      this.triggerTarget.setAttribute("aria-activedescendant", currentItem.getAttribute("id"));
+      this.setAriaCurrentAndActiveDescendant(currentIndex + 1);
     }
   }
 
@@ -56,11 +55,7 @@ export default class extends Controller {
 
     if (currentIndex > 0) {
       this.itemTargets[currentIndex].removeAttribute("aria-current");
-
-      const currentItem = this.itemTargets[currentIndex - 1];
-      currentItem.focus();
-      currentItem.setAttribute("aria-current", "true");
-      this.triggerTarget.setAttribute("aria-activedescendant", currentItem.getAttribute("id"));
+      this.setAriaCurrentAndActiveDescendant(currentIndex - 1);
     }
   }
 
@@ -120,6 +115,13 @@ export default class extends Controller {
     this.itemTargets.forEach((item, index) => {
       item.id = `${contentId}-${index}`;
     });
+  }
+
+  setAriaCurrentAndActiveDescendant(currentIndex) {
+    const currentItem = this.itemTargets[currentIndex];
+    currentItem.focus();
+    currentItem.setAttribute("aria-current", "true");
+    this.triggerTarget.setAttribute("aria-activedescendant", currentItem.getAttribute("id"));
   }
 
   closeContent() {

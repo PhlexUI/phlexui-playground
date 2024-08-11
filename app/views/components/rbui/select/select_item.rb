@@ -37,7 +37,7 @@ module RBUI
       {
         role: "option",
         tabindex: "0",
-        class: "group relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        class: "item group relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         data: {
           controller: "rbui--select-item",
           action: "click->rbui--select#selectItem keydown.enter->rbui--select#selectItem keydown.down->rbui--select#handleKeyDown keydown.up->rbui--select#handleKeyUp keydown.esc->rbui--select#handleEsc",

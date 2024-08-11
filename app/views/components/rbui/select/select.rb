@@ -13,9 +13,10 @@ module RBUI
         data: {
           controller: "rbui--select",
           rbui__select_open_value: "false",
-          action: "click@window->rbui--select#clickOutside"
+          action: "click@window->rbui--select#clickOutside",
+          rbui__select_rbui__select_item_outlet: ".item"
         },
-        class: "w-full relative"
+        class: "group/select w-full relative"
       }
     end
   end
