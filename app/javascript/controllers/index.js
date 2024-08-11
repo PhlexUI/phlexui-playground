@@ -12,6 +12,7 @@ import RbuiTooltipController from "app/views/components/rbui/tooltip/tooltip_con
 import RbuiSelectController from "app/views/components/rbui/select/select_controller";
 import RbuiSelectItemController from "app/views/components/rbui/select/select_item_controller";
 
+import RbuiThemeToggleController from "app/views/components/rbui/theme_toggle/theme_toggle_controller";
 
 application.register("rbui--combobox", RbuiComboboxController);
 application.register("rbui--combobox-content", RbuiComboboxContentController);
@@ -21,3 +22,5 @@ application.register("rbui--tooltip", RbuiTooltipController);
 
 application.register("rbui--select", RbuiSelectController);
 application.register("rbui--select-item", RbuiSelectItemController);
+
+application.register("rbui--theme-toggle", RbuiThemeToggleController);

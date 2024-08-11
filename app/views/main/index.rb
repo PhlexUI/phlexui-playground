@@ -14,6 +14,7 @@ module Main
               li { a(href: "/phlex/combobox", class: "font-medium text-blue-600 dark:text-blue-500 hover:underline") { "Combobox" } }
               li { a(href: "/phlex/tooltip", class: "font-medium text-blue-600 dark:text-blue-500 hover:underline") { "Tooltip" } }
               li { a(href: "/phlex/select", class: "font-medium text-blue-600 dark:text-blue-500 hover:underline") { "Select" } }
+              li { a(href: "/phlex/theme_toggle", class: "font-medium text-blue-600 dark:text-blue-500 hover:underline") { "ThemeToggle" } }
             end
           end
 

@@ -14,4 +14,8 @@ class PhlexController < ApplicationController
   def select
     render(Phlex::Select.new)
   end
+
+  def theme_toggle
+    render(Phlex::ThemeToggle.new)
+  end
 end
