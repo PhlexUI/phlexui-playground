@@ -18,4 +18,8 @@ class PhlexController < ApplicationController
   def theme_toggle
     render(Phlex::ThemeToggle.new)
   end
+
+  def accordion
+    render(Phlex::Accordion.new)
+  end
 end
