@@ -1,10 +1,10 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { Check, ChevronsUpDown } from "lucide-react";
+import * as React from "react"
+import { Check, ChevronsUpDown } from "lucide-react"
 
-import { cn } from "../components/ui/utils";
-import { Button } from "../components/ui/button";
+import { cn } from "../components/ui/utils"
+import { Button } from "../components/ui/button"
 import {
   Command,
   CommandEmpty,
@@ -12,12 +12,13 @@ import {
   CommandGroup,
   CommandInput,
   CommandItem,
-} from "../components/ui/command";
+} from "../components/ui/command"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "../components/ui/popover";
+} from "../components/ui/popover"
+
 
 const suggestions = [
   {
@@ -31,8 +32,8 @@ const suggestions = [
   {
     value: "friendlyrb",
     label: "Friendly.rb",
-  },
-];
+  }
+]
 
 const settings = [
   {
@@ -46,14 +47,14 @@ const settings = [
   {
     value: "rubykaigi",
     label: "RubyKaigi",
-  },
-];
+  }
+]
 
-const frameworks = [...suggestions, ...settings];
+const frameworks = [...suggestions, ...settings]
 
 function Combobox() {
-  const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("");
+  const [open, setOpen] = React.useState(false)
+  const [value, setValue] = React.useState("")
 
   return (
     <div className="flex justify-center mt-72">
@@ -67,8 +68,7 @@ function Combobox() {
               className="w-[200px] justify-between"
             >
               {value
-                ? frameworks.find((framework) => framework.value === value)
-                    ?.label
+                ? frameworks.find((framework) => framework.value === value)?.label
                 : "Select event..."}
               <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
             </Button>
@@ -84,16 +84,14 @@ function Combobox() {
                       key={framework.value}
                       value={framework.value}
                       onSelect={(currentValue) => {
-                        setValue(currentValue === value ? "" : currentValue);
-                        setOpen(false);
+                        setValue(currentValue === value ? "" : currentValue)
+                        setOpen(false)
                       }}
                     >
                       <Check
                         className={cn(
                           "mr-2 h-4 w-4",
-                          value === framework.value
-                            ? "opacity-100"
-                            : "opacity-0"
+                          value === framework.value ? "opacity-100" : "opacity-0"
                         )}
                       />
                       {framework.label}
@@ -106,16 +104,14 @@ function Combobox() {
                       key={framework.value}
                       value={framework.value}
                       onSelect={(currentValue) => {
-                        setValue(currentValue === value ? "" : currentValue);
-                        setOpen(false);
+                        setValue(currentValue === value ? "" : currentValue)
+                        setOpen(false)
                       }}
                     >
                       <Check
                         className={cn(
                           "mr-2 h-4 w-4",
-                          value === framework.value
-                            ? "opacity-100"
-                            : "opacity-0"
+                          value === framework.value ? "opacity-100" : "opacity-0"
                         )}
                       />
                       {framework.label}
@@ -128,7 +124,7 @@ function Combobox() {
         </Popover>
       </div>
     </div>
-  );
+  )
 }
 
 export default Combobox;
