@@ -15,6 +15,7 @@ module Main
               li { a(href: "/phlex/tooltip", class: "font-medium text-blue-600 dark:text-blue-500 hover:underline") { "Tooltip" } }
               li { a(href: "/phlex/select", class: "font-medium text-blue-600 dark:text-blue-500 hover:underline") { "Select" } }
               li { a(href: "/phlex/theme_toggle", class: "font-medium text-blue-600 dark:text-blue-500 hover:underline") { "ThemeToggle" } }
+              li { a(href: "/phlex/accordion", class: "font-medium text-blue-600 dark:text-blue-500 hover:underline") { "Accordion" } }
             end
           end
 
@@ -25,6 +26,7 @@ module Main
               li { a(href: "/shadcn/combobox", class: "font-medium text-blue-600 dark:text-blue-500 hover:underline") { "Combobox" } }
               li { a(href: "/shadcn/tooltip", class: "font-medium text-blue-600 dark:text-blue-500 hover:underline") { "Tooltip" } }
               li { a(href: "/shadcn/select", class: "font-medium text-blue-600 dark:text-blue-500 hover:underline") { "Select" } }
+              li { a(href: "/shadcn/accordion", class: "font-medium text-blue-600 dark:text-blue-500 hover:underline") { "Accordion" } }
             end
           end
         end
