@@ -3,8 +3,8 @@ import { computePosition, autoUpdate, offset } from "@floating-ui/dom";
 
 export default class extends Controller {
   static targets = ["trigger", "content", "input", "value", "item"];
-  static values = { open: Boolean }
-  static outlets = ["rbui--select-item"]
+  static values = { open: Boolean };
+  static outlets = ["rbui--select-item"];
 
   constructor(...args) {
     super(...args);
@@ -25,8 +25,8 @@ export default class extends Controller {
 
     this.rbuiSelectItemOutlets.forEach(item => item.handleSelectItem(event));
 
-    const oldValue = this.inputTarget.value
-    const newValue = event.target.dataset.value
+    const oldValue = this.inputTarget.value;
+    const newValue = event.target.dataset.value;
 
     this.inputTarget.value = newValue;
     this.valueTarget.innerText = event.target.innerText;
