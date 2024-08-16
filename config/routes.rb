@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resource :combobox, only: [ :show ], controller: :react
     resource :tooltip, only: [ :show ], controller: :react
     resource :select, only: [ :show ], controller: :react
+    resource :accordion, only: [ :show ], controller: :react
   end
 
   resource :phlex, only: [] do
