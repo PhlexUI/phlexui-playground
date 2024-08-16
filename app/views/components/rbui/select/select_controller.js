@@ -25,11 +25,13 @@ export default class extends Controller {
 
     this.rbuiSelectItemOutlets.forEach(item => item.handleSelectItem(event));
 
-    this.dispatchOnChange(this.inputTarget.value, event.target.dataset.value);
+    const oldValue = this.inputTarget.value
+    const newValue = event.target.dataset.value
 
-    this.inputTarget.value = event.target.dataset.value;
+    this.inputTarget.value = newValue;
     this.valueTarget.innerText = event.target.innerText;
 
+    this.dispatchOnChange(oldValue, newValue);
     this.closeContent();
   }
 
@@ -137,10 +139,11 @@ export default class extends Controller {
   dispatchOnChange(oldValue, newValue) {
     if (oldValue === newValue) return;
 
-    const event = new InputEvent('change', {
+    const event = new InputEvent("change", {
       bubbles: true,
       cancelable: true,
     });
+
     this.inputTarget.dispatchEvent(event);
   }
 }
