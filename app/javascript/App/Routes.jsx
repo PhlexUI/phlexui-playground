@@ -5,6 +5,7 @@ import Combobox from "./Pages/Combobox";
 import Tooltip from "./Pages/Tooltip";
 import Select from "./Pages/Select";
 import Accordion from "./Pages/Accordion";
+import Form from "./Pages/Form";
 
 function Router() {
   return (
@@ -14,6 +15,7 @@ function Router() {
         <Route path="shadcn/tooltip" element={<Tooltip />} />
         <Route path="shadcn/select" element={<Select />} />
         <Route path="shadcn/accordion" element={<Accordion />} />
+        <Route path="shadcn/form" element={<Form />} />
       </Routes>
     </div>
   );

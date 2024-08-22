@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resource :tooltip, only: [ :show ], controller: :react
     resource :select, only: [ :show ], controller: :react
     resource :accordion, only: [ :show ], controller: :react
+    resource :form, only: [ :show ], controller: :react
   end
 
   resource :phlex, only: [] do
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
     resource :select, only: [ :show ], to: "phlex#select"
     resource :theme_toggle, only: [ :show ], to: "phlex#theme_toggle"
     resource :accordion, only: [ :show ], to: "phlex#accordion"
+    resource :form, only: [ :show ], to: "phlex#form"
   end
 
   # Defines the root path route ("/")

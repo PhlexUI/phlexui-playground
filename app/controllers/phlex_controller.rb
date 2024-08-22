@@ -3,6 +3,10 @@
 class PhlexController < ApplicationController
   layout -> { ApplicationLayout }
 
+  def accordion
+    render(Phlex::Accordion.new)
+  end
+
   def combobox
     render(Phlex::Combobox.new)
   end
@@ -19,7 +23,7 @@ class PhlexController < ApplicationController
     render(Phlex::ThemeToggle.new)
   end
 
-  def accordion
-    render(Phlex::Accordion.new)
+  def form
+    render(Phlex::Form.new)
   end
 end

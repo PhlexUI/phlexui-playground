@@ -16,6 +16,9 @@ import RbuiThemeToggleController from "app/views/components/rbui/theme_toggle/th
 
 import RbuiAccordionController from "app/views/components/rbui/accordion/accordion_controller";
 
+import RbuiFormController from "app/views/components/rbui/form/form_controller";
+import RbuiFormFieldController from "app/views/components/rbui/form/form_field_controller";
+
 application.register("rbui--combobox", RbuiComboboxController);
 application.register("rbui--combobox-content", RbuiComboboxContentController);
 application.register("rbui--combobox-item", RbuiComboboxItemController);
@@ -28,3 +31,6 @@ application.register("rbui--select-item", RbuiSelectItemController);
 application.register("rbui--theme-toggle", RbuiThemeToggleController);
 
 application.register("rbui--accordion", RbuiAccordionController);
+
+application.register("rbui--form", RbuiFormController);
+application.register("rbui--form-field", RbuiFormFieldController);

@@ -88,7 +88,6 @@ module RBUI
 
     def default_attrs
       {
-        type: "button",
         class: default_classes
       }
     end

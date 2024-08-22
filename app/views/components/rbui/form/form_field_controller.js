@@ -1,0 +1,88 @@
+import { Controller } from "@hotwired/stimulus"
+
+export default class extends Controller {
+  static targets = ['input', 'message']
+  static values = { dirty: Boolean }
+
+
+  connect() {
+    this.#setErrorMessage();
+  }
+
+  onInput() {
+    this.#setErrorMessage();
+  }
+
+  onChange() {
+    if (!this.dirtyValue) return;
+
+    if (this.inputTarget.validity.valid) {
+      this.messageTarget.textContent = '';
+    } else {
+      this.messageTarget.textContent = this.#getValidationMessage();
+    }
+  }
+
+  handleSubmit(event) {
+    this.dirtyValue = true;
+
+    if (!this.inputTarget.validity.valid) {
+      event.preventDefault();
+      const message = this.#getValidationMessage();
+      this.messageTarget.textContent = message;
+    }
+  }
+
+  #setErrorMessage() {
+    if (!this.dirtyValue) return;
+
+    if (this.inputTarget.validity.valid) {
+      this.messageTarget.textContent = '';
+    } else {
+      this.messageTarget.textContent = this.#getValidationMessage();
+    }
+  }
+
+  #getValidationMessage() {
+    const input = this.inputTarget;
+    const defaultMessage = this.inputTarget.validationMessage;
+
+    if (input.validity.valueMissing) {
+      return input.dataset.valueMissing || defaultMessage;
+    }
+
+    if (input.validity.badInput) {
+      return input.dataset.badInput || defaultMessage;
+    }
+
+    if (input.validity.patternMismatch) {
+      return input.dataset.patternMismatch || defaultMessage;
+    }
+
+    if (input.validity.rangeOverflow) {
+      return input.dataset.rangeOverflow || defaultMessage;
+    }
+
+    if (input.validity.rangeUnderflow) {
+      return input.dataset.rangeUnderflow || defaultMessage;
+    }
+
+    if (input.validity.stepMismatch) {
+      return input.dataset.stepMismatch || defaultMessage;
+    }
+
+    if (input.validity.tooLong) {
+      return input.dataset.tooLong || defaultMessage;
+    }
+
+    if (input.validity.tooShort) {
+      return input.dataset.tooShort || defaultMessage;
+    }
+
+    if (input.validity.typeMismatch) {
+      return input.dataset.typeMismatch || defaultMessage;
+    }
+
+    return defaultMessage;
+  }
+}
