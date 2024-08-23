@@ -14,7 +14,7 @@ module RBUI
           controller: "rbui--form-field",
           rbui__form_field_dirty_value: "false"
         },
-        class: "rbui--form-field space-y-2"
+        class: "space-y-2"
       }
     end
   end

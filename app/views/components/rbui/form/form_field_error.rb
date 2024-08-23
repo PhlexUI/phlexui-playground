@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module RBUI
-  class FormMessage < Base
+  class FormFieldError < Base
     def view_template(&)
       p(**attrs, &)
     end

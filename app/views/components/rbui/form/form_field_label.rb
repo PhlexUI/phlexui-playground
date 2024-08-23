@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module RBUI
-  class FormLabel < Base
+  class FormFieldLabel < Base
     def view_template(&)
       label(**attrs, &)
     end

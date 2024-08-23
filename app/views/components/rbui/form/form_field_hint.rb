@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module RBUI
-  class FormDescription < Base
+  class FormFieldHint < Base
     def view_template(&)
       p(**attrs, &)
     end

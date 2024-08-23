@@ -4,8 +4,10 @@ export default class extends Controller {
   static targets = ['input', 'message']
   static values = { dirty: Boolean }
 
+  onInvalid(error) {
+    error.preventDefault();
 
-  connect() {
+    this.dirtyValue = true;
     this.#setErrorMessage();
   }
 
@@ -14,23 +16,7 @@ export default class extends Controller {
   }
 
   onChange() {
-    if (!this.dirtyValue) return;
-
-    if (this.inputTarget.validity.valid) {
-      this.messageTarget.textContent = '';
-    } else {
-      this.messageTarget.textContent = this.#getValidationMessage();
-    }
-  }
-
-  handleSubmit(event) {
-    this.dirtyValue = true;
-
-    if (!this.inputTarget.validity.valid) {
-      event.preventDefault();
-      const message = this.#getValidationMessage();
-      this.messageTarget.textContent = message;
-    }
+    this.#setErrorMessage();
   }
 
   #setErrorMessage() {

@@ -7,17 +7,17 @@ module Phlex
         div(class: "w-96") do
           Form do
             FormField do
-              FormLabel { "Name" }
+              FormFieldLabel { "Name" }
               Input(placeholder: "Joel Drapper", required: true, minlength: "3") { "Joel Drapper" }
-              FormDescription()
-              FormMessage()
+              FormFieldHint()
+              FormFieldError()
             end
 
             FormField do
-              FormLabel { "Email" }
+              FormFieldLabel { "Email" }
               Input(placeholder: "joel@drapper.me", required: true, data_value_missing: "Custom error message")
-              FormDescription()
-              FormMessage()
+              FormFieldHint()
+              FormFieldError()
             end
 
             Button(type: "submit") { "Save" }
