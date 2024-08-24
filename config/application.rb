@@ -37,5 +37,6 @@ module PhlexuiPlayground
     Rails.autoloaders.main.collapse("#{Rails.root}/app/views/components/rbui/select")
     Rails.autoloaders.main.collapse("#{Rails.root}/app/views/components/rbui/theme_toggle")
     Rails.autoloaders.main.collapse("#{Rails.root}/app/views/components/rbui/input")
+    Rails.autoloaders.main.collapse("#{Rails.root}/app/views/components/rbui/checkbox")
   end
 end

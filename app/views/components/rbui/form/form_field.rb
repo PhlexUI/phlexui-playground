@@ -11,8 +11,7 @@ module RBUI
     def default_attrs
       {
         data: {
-          controller: "rbui--form-field",
-          rbui__form_field_dirty_value: "false"
+          controller: "rbui--form-field"
         },
         class: "space-y-2"
       }

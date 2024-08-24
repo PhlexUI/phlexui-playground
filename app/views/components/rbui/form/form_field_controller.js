@@ -2,12 +2,19 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static targets = ['input', 'message']
-  static values = { dirty: Boolean }
+  static values = { shouldValidate: false }
+
+
+  connect() {
+    if (this.messageTarget.textContent) {
+      this.shouldValidateValue = true;
+    }
+  }
 
   onInvalid(error) {
     error.preventDefault();
 
-    this.dirtyValue = true;
+    this.shouldValidateValue = true;
     this.#setErrorMessage();
   }
 
@@ -20,7 +27,7 @@ export default class extends Controller {
   }
 
   #setErrorMessage() {
-    if (!this.dirtyValue) return;
+    if (!this.shouldValidateValue) return;
 
     if (this.inputTarget.validity.valid) {
       this.messageTarget.textContent = '';
