@@ -9,7 +9,7 @@ module RBUI
     private
 
     def default_attrs
-      { class: "-mx-1 h-px bg-border" }
+      {class: "-mx-1 h-px bg-border"}
     end
   end
 end

@@ -29,7 +29,7 @@ module RBUI
       ) do |s|
         s.circle(cx: "11", cy: "11", r: "8")
         s.path(
-          d: "m21 21-4.3-4.3",
+          d: "m21 21-4.3-4.3"
         )
       end
     end
@@ -44,9 +44,8 @@ module RBUI
           "flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",
         placeholder: @placeholder,
         data: {
-          action: "input->rbui--combobox-content#filter",
-          rbui__combobox_target: "search",
-          rbui__combobox_content_target: "search"
+          action: "input->rbui--combobox#onSearchInput",
+          rbui__combobox_target: "search"
         },
         autocomplete: "off",
         autocorrect: "off",
