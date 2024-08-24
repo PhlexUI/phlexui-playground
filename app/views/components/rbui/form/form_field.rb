@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module RBUI
-  class ComboboxSeparator < Base
+  class FormField < Base
     def view_template(&)
       div(**attrs, &)
     end
@@ -9,7 +9,12 @@ module RBUI
     private
 
     def default_attrs
-      {class: "-mx-1 h-px bg-border"}
+      {
+        data: {
+          controller: "rbui--form-field"
+        },
+        class: "space-y-2"
+      }
     end
   end
 end

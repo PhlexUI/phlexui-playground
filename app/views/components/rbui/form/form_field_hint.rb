@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
 module RBUI
-  class ComboboxSeparator < Base
+  class FormFieldHint < Base
     def view_template(&)
-      div(**attrs, &)
+      p(**attrs, &)
     end
 
     private
 
     def default_attrs
-      {class: "-mx-1 h-px bg-border"}
+      { class: "text-sm text-muted-foreground" }
     end
   end
 end

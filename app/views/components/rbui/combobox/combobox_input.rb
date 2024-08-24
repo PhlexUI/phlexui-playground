@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module RBUI
-  class SelectInput < Base
+  class ComboboxInput < Base
     def view_template
       input(**attrs)
     end
@@ -12,6 +12,7 @@ module RBUI
       {
         class: "hidden",
         data: {
+          rbui__combobox_target: "input",
           rbui__select_target: "input",
           rbui__form_field_target: "input",
           action: "change->rbui--form-field#onChange invalid->rbui--form-field#onInvalid"

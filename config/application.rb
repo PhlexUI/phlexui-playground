@@ -29,11 +29,14 @@ module PhlexuiPlayground
     # config.eager_load_paths << Rails.root.join("extras")
 
     Rails.autoloaders.main.inflector.inflect("rbui" => "RBUI")
-    Rails.autoloaders.main.collapse("#{Rails.root}/app/views/components/rbui/combobox")
-    Rails.autoloaders.main.collapse("#{Rails.root}/app/views/components/rbui/tooltip")
+    Rails.autoloaders.main.collapse("#{Rails.root}/app/views/components/rbui/accordion")
     Rails.autoloaders.main.collapse("#{Rails.root}/app/views/components/rbui/button")
+    Rails.autoloaders.main.collapse("#{Rails.root}/app/views/components/rbui/combobox")
+    Rails.autoloaders.main.collapse("#{Rails.root}/app/views/components/rbui/form")
+    Rails.autoloaders.main.collapse("#{Rails.root}/app/views/components/rbui/tooltip")
     Rails.autoloaders.main.collapse("#{Rails.root}/app/views/components/rbui/select")
     Rails.autoloaders.main.collapse("#{Rails.root}/app/views/components/rbui/theme_toggle")
-    Rails.autoloaders.main.collapse("#{Rails.root}/app/views/components/rbui/accordion")
+    Rails.autoloaders.main.collapse("#{Rails.root}/app/views/components/rbui/input")
+    Rails.autoloaders.main.collapse("#{Rails.root}/app/views/components/rbui/checkbox")
   end
 end
